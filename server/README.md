@@ -1,3 +1,4 @@
+```sh
 server_modular/
 ├─ config.json                     # 端點設定（只需 host）
 ├─ server/
@@ -15,3 +16,4 @@ server_modular/
 │  │  ├─ rooms.json
 │  │  └─ tokens.json
 │  └─ uploaded_games/              # 上架遊戲實體檔（依名字/版本展開）
+```
