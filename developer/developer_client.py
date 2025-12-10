@@ -382,7 +382,7 @@ async def async_main():
 
                 # 3) 下架遊戲
                 elif choice == "3":
-                    game_name = input("要下架的遊戲名稱: ").strip()
+                    game_name = input("(使用者將無法建立新房間，也看不到該遊戲在任何地方)\n要下架的遊戲名稱: ").strip()
                     resp = await send_req_auth({
                         "kind": "remove_game",
                         "token": token,
