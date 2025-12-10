@@ -761,7 +761,7 @@ async def async_main():
                                 continue
 
                             print()
-                            rid = input("請輸入要加入的房間 ID如：tetris-xxxx（或 Enter 返回）：").strip()
+                            rid = input("請輸入要加入的房間 ID如：tetris-xxxx-xxxx（或 Enter 返回）：").strip()
                             if not rid:
                                 continue
 
