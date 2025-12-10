@@ -53,13 +53,20 @@ np_hw3/
 
 ## 2. 環境需求
 
-- **Python 3.10+**
+- **Python 3.10+**(建議: 3.11.2)
 - **套件需求**
   - GUI Tetris 需安裝 `pygame`
   - 其餘皆為 Python 標準函式庫
 
 ### 安裝方式
 基本上就是
+```sh
+python --version
+看是否大於3.10
+```
+```sh
+pip install pygame
+```
 ```sh
 pip install pygame
 ```
@@ -212,6 +219,17 @@ Server 重啟時資料不會遺失（除非手動刪除 JSON）。
 ## 6. 重置與除錯小提示
 
 ### 重置系統狀態
+```sh
+cd hw3_np/server/data
+rm -f ~/hw3_np/server/data/tokens.json
+rm -f ~/hw3_np/server/data/games.json
+rm -f ~/hw3_np/server/data/player_users.json
+rm -f ~/hw3_np/server/data/rooms.json
+rm -f ~/hw3_np/server/data/dev_users.json
+cat tokens.json
+cd ..
+rm -rf uploaded_games/*
+```
 在系計中的server上
 1. 關閉所有 Server 與前台程式
 2. 刪除 `server/data/*.json`
@@ -221,6 +239,8 @@ Server 重啟時資料不會遺失（除非手動刪除 JSON）。
 ```sh
 python server/main.py
 ```
+
+
 
 ### Port 被占用 / 連線異常
 
