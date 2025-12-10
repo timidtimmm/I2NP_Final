@@ -180,7 +180,8 @@ python player/lobby_client.py
 - `dev_users.json` / `player_users.json`：帳號資料
 - `games.json`：遊戲 metadata（作者、描述、所有版本、最新版本、評價）
 - `rooms.json`：運作中的房間
-- `tokens.json`：登入 token 與有效期限
+- ~~`tokens.json`：登入 token 與有效期限~~
+- 登入將由server中的python list負責，關掉就刪掉
 
 Server 重啟時資料不會遺失（除非手動刪除 JSON）。
 
