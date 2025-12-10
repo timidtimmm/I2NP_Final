@@ -16,7 +16,7 @@
 ## 1. 專案結構
 
 ```text
-專案根目錄/
+np_hw3/
 ├── config.json                 # 全域設定檔
 ├── server/
 │   ├── main.py                 # 啟動 Developer 與 Lobby Server
@@ -58,8 +58,12 @@
   - GUI Tetris 需安裝 `pygame`
   - 其餘皆為 Python 標準函式庫
 
-### 安裝方式（建議虛擬環境）
-
+### 安裝方式
+基本上就是
+```sh
+pip install pygame
+```
+或是
 ```sh
 python -m venv .venv
 # macOS / Linux
@@ -77,6 +81,9 @@ pip install pygame
 ### Step 1. 啟動 Server
 
 ```sh
+ssh yatliou我的生日@linux1.cs.nycu.edu.tw
+輸入密碼
+cd hw3_np
 python server/main.py
 ```
 
@@ -84,6 +91,38 @@ python server/main.py
 - 建立 / 更新 `server/runtime_ports.json`
 - 偵測公網 / 內網 IP（供跨機 Demo 用）
 
+如果需要在其他server(windows)
+```sh
+$env:LOBBY_CONNECT_HOST="140.113.17.11"
+$env:LOBBY_CONNECT_PORT="12666"
+$env:DEV_CONNECT_HOST="140.113.17.11"
+$env:DEV_CONNECT_PORT="53899"
+python developer/developer_client.py
+```
+如果要取消
+```sh
+Remove-Item Env:LOBBY_CONNECT_HOST
+Remove-Item Env:LOBBY_CONNECT_PORT
+Remove-Item Env:DEV_CONNECT_HOST
+Remove-Item Env:DEV_CONNECT_PORT
+python developer/developer_client.py
+```
+如果需要在其他server(mac)
+```sh
+export LOBBY_CONNECT_HOST="140.113.17.11"
+export LOBBY_CONNECT_PORT="12666"
+export DEV_CONNECT_HOST="140.113.17.11"
+export DEV_CONNECT_PORT="53899"
+python developer/developer_client.py
+```
+如果要取消
+```sh
+unset LOBBY_CONNECT_HOST
+unset LOBBY_CONNECT_PORT
+unset DEV_CONNECT_HOST
+unset DEV_CONNECT_PORT
+python developer/developer_client.py
+```
 ### Step 2. 啟動開發者 Client
 
 ```sh
@@ -172,7 +211,7 @@ Server 重啟時資料不會遺失（除非手動刪除 JSON）。
 ## 6. 重置與除錯小提示
 
 ### 重置系統狀態
-
+在系計中的server上
 1. 關閉所有 Server 與前台程式
 2. 刪除 `server/data/*.json`
 3. 清空 `server/uploaded_games/*` 與 `player/downloads/*`
