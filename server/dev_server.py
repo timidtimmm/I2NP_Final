@@ -192,7 +192,7 @@ def handle_upload_game(payload):
             if not parse_version(current_latest):
                 return {
                     "ok": False,
-                    "error": f"目前 DB 中 latest 版本號格式異常：{current_latest}，請聯絡助教或手動修正 games.json。"
+                    "error": f"目前 DB 中 latest 版本號格式異常：{current_latest}，請手動修正 games.json。"
                 }
             if not version_greater(version, current_latest):
                 suggested = suggest_next_version(current_latest)
